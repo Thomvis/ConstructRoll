@@ -1,0 +1,61 @@
+<!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Construct Dice Roller</title>
+    <meta name="description" content="">
+
+    <link rel="canonical" href="https://roll.construct5e.app/">
+
+    <meta name="apple-itunes-app" content="app-id=1490015210, app-clip-bundle-id=me.thomasvisser.construct5e.diceroller, app-clip-display=card">
+
+    <link href="output.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-indigo-dark">
+    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+      <div class="fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-full p-4 text-center sm:p-0">
+          <!-- Modal panel -->
+          <div class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="flex flex-col items-center text-center space-y-4">
+                <p class="text-base text-gray-500">You are seeing this page because your device does not support App Clips. Download <a class="underline text-indigo-dark" href="https://apps.apple.com/app/construct-for-d-d-5e/id1490015210">Construct</a> from the App Store for the best dice rolling experience.</p>
+
+                <p class="text-base text-gray-700 animate-pulse">Redirecting to a back-up dice roller...</p>
+
+                <a id="redirect-link" href=""/>
+                  <p class="text-xs text-gray-500">(or tap <span class="underline text-indigo-dark">here</span> to continue)</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      var expression = "1d20"
+      if (window.location.hash) {
+        expression = decodeURI(window.location.hash.substring(1))
+        expression = expression.replaceAll("+", "%2B")
+        expression = expression.replaceAll(" ", "+")
+      }
+
+      let destination = `https://www.google.com/search?q=roll%20${expression}`
+
+      document.getElementById("redirect-link").href = destination
+      setTimeout(() => {
+        // window.location.href = destination
+      }, 4000)
+    });
+  </script>
+</body>
+</html>
