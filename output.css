@@ -675,6 +675,10 @@ video {
   width: 20rem;
 }
 
+.max-w-xl {
+  max-width: 36rem;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -816,6 +820,10 @@ video {
   overflow-x: hidden;
 }
 
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -951,6 +959,14 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.p-12 {
+  padding: 3rem;
 }
 
 .px-4 {
