@@ -4,5 +4,14 @@
             "7A98H9ZVL6.me.thomasvisser.construct5e",
             "7A98H9ZVL6.me.thomasvisser.construct5e.diceroller"
         ]
+    },
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "7A98H9ZVL6.me.thomasvisser.construct5e",
+                "paths": ["*"]
+            }
+        ]
     }
 }
