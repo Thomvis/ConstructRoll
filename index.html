@@ -45,10 +45,10 @@
 
 
   <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
+    function updateContent(hash) {
       var expression = "1d20"
-      if (window.location.hash) {
-        expression = decodeURI(window.location.hash.substring(1))
+      if (hash) {
+        expression = decodeURI(hash.substring(1))
       }
 
       document.querySelectorAll(".roll").forEach(e => {
@@ -61,6 +61,13 @@
       let destination = `https://www.google.com/search?q=roll%20${expression}`
 
       document.getElementById("redirect-link").href = destination
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      updateContent(window.location.hash)
+      addEventListener('hashchange', (event) => {
+        updateContent(window.location.hash)
+      })
     });
   </script>
 </body>
